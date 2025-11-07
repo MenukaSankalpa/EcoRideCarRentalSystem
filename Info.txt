@@ -1,0 +1,24 @@
+EcoRideCarRentalSystem/
+└─ src/
+   └─ main/
+      └─ java/
+         └─ ecoride/
+            Category.java
+            AvailabilityStatus.java
+            ReservationStatus.java
+            PricingInfo.java
+            PricingPolicy.java
+            Car.java
+            Customer.java
+            Reservation.java
+            Invoice.java
+            CarInventory.java
+            ReservationManager.java
+            UserInterface.java
+            Main.java
+   └─ test/
+      └─ java/
+         └─ ecoride/
+            ReservationManagerTest.java
+
+File tree
