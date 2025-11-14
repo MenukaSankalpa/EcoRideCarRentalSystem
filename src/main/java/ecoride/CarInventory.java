@@ -3,9 +3,6 @@ package ecoride;
 import java.util.*;
 import java.util.stream.Collectors;
 
-/**
- * Manages the collection of cars.
- */
 public class CarInventory {
     private final Map<String, Car> cars = new HashMap<>();
 
