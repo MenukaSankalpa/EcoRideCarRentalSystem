@@ -17,7 +17,6 @@ public class Reservation {
     private ReservationStatus status;
 
     public Reservation(Customer customer, Car car, LocalDate rentalStartDate, int numDays, int expectedTotalKm) {
-        // ✅ Generate formatted ID like R001, R002, ...
         this.reservationId = String.format("R%03d", counter++);
         this.customer = customer;
         this.car = car;
@@ -28,7 +27,7 @@ public class Reservation {
         this.refundableDeposit = PricingInfo.REFUNDABLE_DEPOSIT;
         this.status = ReservationStatus.ACTIVE;
 
-        // Reserve the car when creating reservation
+
         this.car.setAvailability(AvailabilityStatus.RESERVED);
     }
 
@@ -75,10 +74,6 @@ public class Reservation {
     public void setExpectedTotalKm(int expectedTotalKm) {
         this.expectedTotalKm = expectedTotalKm;
     }
-
-    /**
-     * Cancel reservation. Business rule about cancellation window is enforced by ReservationManager.
-     */
     public void cancel() {
         this.status = ReservationStatus.CANCELLED;
         this.car.setAvailability(AvailabilityStatus.AVAILABLE);
@@ -91,7 +86,6 @@ public class Reservation {
 
     @Override
     public String toString() {
-        // ✅ Now show the new formatted ID directly (no UUID substring)
         return String.format(
                 "ResID:%s | Cust:%s | Car:%s | Start:%s | Days:%d | Km:%d | Status:%s",
                 reservationId, customer.getName(), car.getCarId(), rentalStartDate, numDays, expectedTotalKm, status
