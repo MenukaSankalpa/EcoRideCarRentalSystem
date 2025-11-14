@@ -1,8 +1,5 @@
 package ecoride;
 
-/**
- * Domain entity representing a Car.
- */
 public class Car {
     private final String carId;
     private String model;
